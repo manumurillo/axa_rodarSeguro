@@ -1,0 +1,216 @@
+body{
+    background-image: url("../images/fondo.jpg");
+    background-color: #ffffff;
+    background-repeat:no-repeat;
+    background-position: top center;   
+}   
+
+#container{
+    width: 922px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#header{
+    width: 922px;
+    height: 122px;
+    background-image: url("../images/header.png");
+    background-repeat:no-repeat;
+}
+
+#content{
+    width: 852px;
+    padding-left: 40px;
+    padding-right: 30px;
+}
+
+#title{
+    width: 922px;
+    height: 231px;
+    background-image: url("../images/titulo.png");
+    background-repeat:no-repeat;
+}
+
+#info{
+    width: 572px;
+    height: 342px;
+    background-color: transparent);
+    background-repeat:no-repeat;
+    float: left;  
+    margin-top: 20px; 
+    position: relative;
+   
+}
+
+#form{
+    width: 260px;
+    height: 330px;
+    background-image: url("../images/formulario.png");
+    background-repeat:no-repeat;
+    float: right;
+    padding: 50px 10px 10px 10px;
+    
+}
+
+#resp{
+    display: none;
+    width: 281px;
+    height: 385px;
+    background-image: url("../images/gracias.png");
+    text-align: center;
+    background-repeat:no-repeat;    
+}
+
+#footer{
+    width: 922px;
+    height: 100px;
+    text-align: center;
+    background-repeat:no-repeat;
+}
+
+label{
+    color: #FFFFFF;
+    font-size: 10px;
+    margin: 12px 0;
+}
+
+.space5{
+    width: 100%;
+    height: 5px;
+}
+
+.space10{
+    width: 100%;
+    height: 10px;
+}
+
+.space20{
+    width: 100%;
+    height: 20px;
+}
+
+.item-form{
+    width: 240px;
+    margin: 5px 10px 5px 10px;
+    clear: both;
+    text-align: left;
+}
+
+.centered{
+    text-align: center;
+}
+
+input[type='text'].large{
+    border: 1px solid #dddddd;
+    width: 213px;
+    background-color: #f4f5f9;
+    color: #666666; 
+}
+
+input[type='text'].small{
+    border: 1px solid #dddddd;
+    width: 63px;
+    background-color: #f4f5f9;
+    color: #666666; 
+}
+
+
+.col-left{
+    float: left;
+    width: 115px;
+    margin-left: 3px;
+}
+
+.col-right{
+    width: 120px;
+    float: left;
+    text-align: left;
+}
+
+
+p{
+    color: #FFFFFF;
+    font-size: 10px;
+    font-family: Arial, Helvetica;
+    margin-top: 10px;
+}
+
+.col-left-min{
+    margin-top: 10px;
+    float: left;
+    width: 20px;
+}
+
+.col-right-max{
+    width: 215px;
+    float: left;
+    text-align: left;
+}
+
+.right{
+    text-align: right;
+}
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+#tool1{
+    background-image: url("../images/tooltip1.jpg");
+    width: 284px; 
+    height: 61px; 
+    top: 275px;
+    left: 325px;
+    position:absolute;
+    display:none;
+}
+
+#tool2{
+    background-image: url("../images/tooltip2.jpg");
+    width: 283px; 
+    height: 50px; 
+    top: 320px;
+    left: 325px;
+    position:absolute;
+    display:none;
+}
+
+#tool3{
+    background-image: url("../images/tooltip3.jpg");
+    width: 284px; 
+    height: 61px; 
+    top: 345px;
+    left: 325px;
+    position:absolute;
+    display:none;
+}
+
+#tool4{
+    background-image: url("../images/tooltip4.jpg");
+    width: 284px; 
+    height: 159px; 
+    top: 450px;
+    left: 325px;
+    position:absolute;
+    display:none;
+}
+
+.button{
+    background-color: transparent;
+    color: #FFFFFF;
+    margin-top: 30px;
+}
+
+.alert{
+    width: 16px;
+    height: 16px;
+    background-image: url("../images/alert-icon.png");
+    background-repeat:no-repeat;
+    background-position: middle center; 
+    display: none;
+}
+
+.r{
+    float: right;
+}
+
+.l{
+    float: left;
+}
