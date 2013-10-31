@@ -3,7 +3,27 @@ body{
     background-color: #ffffff;
     background-repeat:no-repeat;
     background-position: top center;   
-}   
+}  
+
+a:link {
+    text-decoration: none;
+    color: #FFFFFF;
+} 
+
+a:visited{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+a:hover{
+    text-decoration: underline;
+    color: #FFFFFF;
+}
+
+a:active{
+    text-decoration: none;
+    color: #FFFFFF;
+}
 
 #container{
     width: 922px;
@@ -34,7 +54,7 @@ body{
 #info{
     width: 572px;
     height: 342px;
-    background-color: transparent);
+    background-color: transparent;
     background-repeat:no-repeat;
     float: left;  
     margin-top: 20px; 
@@ -49,16 +69,17 @@ body{
     background-repeat:no-repeat;
     float: right;
     padding: 50px 10px 10px 10px;
-    
 }
 
 #resp{
-    display: none;
-    width: 281px;
-    height: 385px;
+    width: 260px;
+    height: 110px;
     background-image: url("../images/gracias.png");
     text-align: center;
-    background-repeat:no-repeat;    
+    background-repeat:no-repeat;
+    float: right;
+    padding: 200px 10px 60px 10px;   
+    margin-top: 10px 
 }
 
 #footer{
@@ -128,11 +149,20 @@ input[type='text'].small{
 }
 
 
-p{
+p.privacidad{
     color: #FFFFFF;
     font-size: 10px;
     font-family: Arial, Helvetica;
     margin-top: 10px;
+}
+
+p.back{
+    color: #FFFFFF;
+    font-size: 20px;
+    font-family: Arial, Helvetica;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
 }
 
 .col-left-min{
@@ -156,8 +186,6 @@ p{
     background-image: url("../images/tooltip1.jpg");
     width: 284px; 
     height: 61px; 
-    top: 275px;
-    left: 325px;
     position:absolute;
     display:none;
 }
@@ -165,9 +193,7 @@ p{
 #tool2{
     background-image: url("../images/tooltip2.jpg");
     width: 283px; 
-    height: 50px; 
-    top: 320px;
-    left: 325px;
+    height: 50px;
     position:absolute;
     display:none;
 }
@@ -175,9 +201,7 @@ p{
 #tool3{
     background-image: url("../images/tooltip3.jpg");
     width: 284px; 
-    height: 61px; 
-    top: 345px;
-    left: 325px;
+    height: 61px;
     position:absolute;
     display:none;
 }
@@ -185,9 +209,7 @@ p{
 #tool4{
     background-image: url("../images/tooltip4.jpg");
     width: 284px; 
-    height: 159px; 
-    top: 450px;
-    left: 325px;
+    height: 159px;
     position:absolute;
     display:none;
 }
@@ -196,6 +218,9 @@ p{
     background-color: transparent;
     color: #FFFFFF;
     margin-top: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    position:relative;
 }
 
 .alert{
@@ -203,7 +228,7 @@ p{
     height: 16px;
     background-image: url("../images/alert-icon.png");
     background-repeat:no-repeat;
-    background-position: middle center; 
+    background-position: center center; 
     display: none;
 }
 
@@ -213,4 +238,23 @@ p{
 
 .l{
     float: left;
+}
+
+.info:hover{
+    cursor: help;
+}
+
+.info-error{
+    width: 60%;
+    border: 1px solid;
+    margin: 10px auto;
+    padding: 15px 10px 15px 50px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    color: #D8000C;
+    background-color: #FFBABA;
+    background-image: url('../images/info-red.png');
 }

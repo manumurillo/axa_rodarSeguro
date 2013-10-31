@@ -1,5 +1,10 @@
 jQuery(document).ready(function() {
-    jQuery("#tooltip1").mouseenter(function() {
+    
+    jQuery("#telefono").mask("(99) 9999-9999");
+    
+    jQuery("#tooltip1").mouseenter(function(e) {
+        $("#tool1").css("left", e.pageX + 5);
+        $("#tool1").css("top", e.pageY - 55);
         jQuery("#tool1").fadeIn(200);
     });
     
@@ -8,7 +13,9 @@ jQuery(document).ready(function() {
     });
     
     
-    jQuery("#tooltip2").mouseenter(function() {
+    jQuery("#tooltip2").mouseenter(function(e) {
+        $("#tool2").css("left", e.pageX + 5);
+        $("#tool2").css("top", e.pageY - 50);
         jQuery("#tool2").fadeIn(200);
     });
     
@@ -17,7 +24,9 @@ jQuery(document).ready(function() {
     });
     
     
-    jQuery("#tooltip3").mouseenter(function() {
+    jQuery("#tooltip3").mouseenter(function(e) {
+        $("#tool3").css("left", e.pageX + 5);
+        $("#tool3").css("top", e.pageY - 50);
         jQuery("#tool3").fadeIn(200);
     });
     
@@ -26,7 +35,9 @@ jQuery(document).ready(function() {
     });
     
     
-    jQuery("#tooltip4").mouseenter(function() {
+    jQuery("#tooltip4").mouseenter(function(e) {
+        $("#tool4").css("left", e.pageX + 5);
+        $("#tool4").css("top", e.pageY - 150);
         jQuery("#tool4").fadeIn(200);
     });
     
@@ -34,14 +45,19 @@ jQuery(document).ready(function() {
         jQuery("#tool4").fadeOut(200);
     });
     
-    
+    jQuery.validator.addMethod("textonly", function(value) {
+            return String(value).match(/^[a-zA-Z\sáéíóúAÉÍÓÚÑñüÜ]+$/);
+        }, 'Ha introducido un caracter inválido'
+    );
+        
     //Validate form
     jQuery("#rodarSeguro-form").validate({
         rules :{
             nombre : {
                 required : true,
                 minlength: 5,
-                maxlength: 70
+                maxlength: 70,
+                'textonly': true
             },
             email : {
                 required : true,
@@ -54,6 +70,7 @@ jQuery(document).ready(function() {
                 required: true
             },
             edad : {
+                number: true,
                 required : true,
                 min : 12,
                 max : 99
@@ -82,9 +99,10 @@ jQuery(document).ready(function() {
                 required: "Indique su sexo"
             },
             edad : {
-                required : "Tu edad es requerida",
+                number: "Introduzca sólo números",
+                required : "Su edad es requerida",
                 min: "La edad debe ser mayor o igual a 12 y menor o igual a 99",
-                max: "La edad debe ser mayor o igual a 12 y menor o igual a 99",
+                max: "La edad debe ser mayor o igual a 12 y menor o igual a 99"
             }
         },
         errorPlacement: function (error, element) {
