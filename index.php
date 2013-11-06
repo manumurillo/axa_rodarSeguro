@@ -3,7 +3,13 @@ if (isset($_GET["error"])) {
     $error = $_GET["error"];
 
     if ($error == 1) {
+        $mensaje = "Hubo un problema con sus datos, intente de nuevo por favor.";
+    }
+    if ($error == 2) {
         $mensaje = "Hubo un problema en el envío de sus datos, intente de nuevo por favor.";
+    }
+    if ($error == 3) {
+        $mensaje = "Hubo un problema al enviar sus datos a nuestros asesores, pero se han registrado con éxito.";
     }
 }
 ?>

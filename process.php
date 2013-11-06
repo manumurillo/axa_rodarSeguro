@@ -5,12 +5,53 @@ if (isset($_POST)) {
     $telefono = $_POST["telefono"];
     $sexo = $_POST["sexo"];
     $edad = $_POST["edad"];
-    $autorizacion = (isset($_POST['$autorizacion']) ? $_POST['$autorizacion'] : 0);
+    $autorizacion = (isset($_POST['autorizacion']) ? $_POST['autorizacion'] : 0);
 
     if ($nombre && $email && $telefono && $sexo && $edad !== "") {
-        //TODO process
-        //if process fail -> redirect error=2 "process failed"
+        include_once("webService/lib/nusoap.php");
+        try{
+          $client = new SoapClient("http://stage.havasww.com.mx/axa/rodarSeguro/webService/registerData.php?wsdl");
+          $params = array('nombre' => $nombre, 
+                       'email' => $email, 
+                       'telefono' => $telefono, 
+                       'edad' => $edad,  
+                       'sexo' => $sexo, 
+                       'autorizacion' => $autorizacion);
         
+          $result = $client->__call("registerDataContact",$params);
+         
+          if($result == 0){
+              header("Location: index.php?error=2");
+          }
+        }catch (SoapFault $e){
+            header("Location: index.php?error=2");
+        }
+        
+        include_once "util.php";
+        $gender = ($sexo=="M")? "Masculino" : "Femenino";
+        $autoriza = ($autorizacion==0)? "NO" : "S&Iacute;";
+        $subject = "Nuevo registro AXA Rodar Seguro";
+        $body = "<html>
+                <head>
+                <meta charset='iso-8859-1' />
+                </head>
+                <body>
+                <div style='font-family: Arial; font-size: 12px'>
+                    Hay un nuevo registro de <b>AXA Rodar Seguro</b>:<br/><br/>
+                    
+                    Datos enviados:<br/><br/>
+                    <b>Nombre: </b>".$nombre."<br/>
+                    <b>Correo electr&oacute;nico: </b>".$email."<br/>
+                    <b>Tel&eacute;fono: </b>".$telefono."<br/>
+                    <b>Sexo: </b>".$gender."<br/>
+                    <b>Edad: </b>". $edad." a&ntilde;os<br/><br/>
+                    
+                    El usuario <b>".$autoriza."</b> ha permitido que AXA comparta su informaci&oacute;n con un asesor para que sea contactado por tel&eacute;fono o correo electr&oacute;nico.<br/><br/>
+                    
+                    Fecha de env&iacute;o del formulario: ".date("j M, Y, g:i a")."</div></body></html>";
+         if(!enviarEmail($subject, $body)){
+             header("Location: index.php?error=3");
+         }
     }
     else{
         header("Location: index.php?error=1");
@@ -52,7 +93,7 @@ if (isset($_POST)) {
                     </map>
                 </div>
                 <div id="resp">
-                    <p class="back"> <a href="index.php" target="_self" >Regresar</a> </p>
+                    <a href="http://s16338.gridserver.com/reaccionaporlavida/" target="_blank"><img src="images/logo-reacciona-por-la-vida.png" alt="Reacciona por la vida"></a> 
                 </div>
             </div>
 
